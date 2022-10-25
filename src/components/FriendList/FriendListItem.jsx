@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
+import { Item, Status, Title } from "./FriendListItem.styled";
 export const FriendListItem = ({isOnline, avatar, name}) => {
    
-    return <li className="item">
-    {isOnline ? <span className="status">Online</span> : <span className="status"></span>}
+    return <Item>
+    <Status isOnline={isOnline}></Status>
     <img className="avatar" src={avatar} alt="User avatar" width="48" />
-    <p className="name">{name}</p>
-  </li>
+    <Title>{name}</Title>
+  </Item>
 }
 FriendListItem.propTypes = {
   isOnline: PropTypes.bool,
